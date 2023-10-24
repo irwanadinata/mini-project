@@ -5,10 +5,13 @@ import Movie from "@/pages/movieDetail/movieDetail";
 import OpenAI from "@/pages/openAI/openAI";
 import Navbar from "@/components/navbar";
 import SearchMovie from "@/pages/search/searchMovie";
+import { AuthContextProvider } from "@/utils/contexts/authContext";
 import "@/styles/app.css"
+import Signin from "@/pages/signIn/signIn";
 function Routing() {
   return (
     <div className="App">
+      <AuthContextProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -18,8 +21,10 @@ function Routing() {
           <Route path="chatme" element={<OpenAI/>}></Route>
           <Route path="/*" element={<h1>Error Page</h1>}></Route>
           <Route path="/search" element={<SearchMovie/>} />
+          <Route path='/signin' element={<Signin />} />
         </Routes>
       </Router>
+      </AuthContextProvider>
     </div>
   );
 }
