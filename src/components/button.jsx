@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Button({ label, to, target, className }) {
+function Button({ label, to, target, className, onClick }) {
   if (to) {
     return (
       <Link to={to} target={target} className={className}>
@@ -10,7 +10,7 @@ function Button({ label, to, target, className }) {
     );
   } else {
     return (
-      <button className={className}>
+      <button className={className} onClick={onClick}>
         {label}
       </button>
     );

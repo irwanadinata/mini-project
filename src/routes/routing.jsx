@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "@/pages/homePage/home";
-import MovieList from "@/components/movieList";
+import MovieList from "@/pages/movieList/movieList";
 import Movie from "@/pages/movieDetail/movieDetail";
 import OpenAI from "@/pages/openAI/openAI";
 import Navbar from "@/components/navbar";
