@@ -35,9 +35,11 @@ const Navbar = () => {
           <Link to="/movies/upcoming" className="text-white ml-8">
             <i className="fas fa-calendar-alt"></i> Upcoming
           </Link>
-          <Link to="/chatme" className="text-white ml-8">
-            <i className="fas fa-comments"></i> ChatMe
-          </Link>
+          {user && (
+            <Link to="/chatme" className="text-white ml-8">
+              <i className="fas fa-comments"></i> ChatMe
+            </Link>
+          )}
           <Link to="/search" className="text-white ml-8">
             <i className="fas fa-search"></i> SearchMovie
           </Link>
@@ -45,14 +47,20 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center ml-20">
           {user ? (
             <div className="text-white">
-              <span className="text-white">Welcome, </span> 
+              <span className="text-white">Welcome, </span>
               <span className="text-warning">{user.displayName} </span>
-              <button onClick={handleSignOut} className="ml-2 bg-red-500 text-white px-2 py-1 rounded mr-2.5">
+              <button
+                onClick={handleSignOut}
+                className="ml-2 bg-red-500 text-white px-2 py-1 rounded mr-2.5"
+              >
                 Logout
               </button>
             </div>
           ) : (
-            <Link to="/signin" className="text-white bg-blue-500 px-2 py-1 rounded mr-2.5">
+            <Link
+              to="/signin"
+              className="text-white bg-blue-500 px-2 py-1 rounded mr-2.5"
+            >
               Sign in
             </Link>
           )}
@@ -74,21 +82,29 @@ const Navbar = () => {
           <Link to="/movies/upcoming" className="block text-white ml-2">
             <i className="fas fa-calendar-alt"></i> Upcoming
           </Link>
-          <Link to="/chatme" className="block text-white ml-2">
-            <i className="fas fa-comments"></i> ChatMe
-          </Link>
+          {user && ( // Check if the user is logged in
+            <Link to="/chatme" className="block text-white ml-2">
+              <i className="fas fa-comments"></i> ChatMe
+            </Link>
+          )}
           <Link to="/search" className="block text-white ml-2">
             <i className="fas fa-search"></i> SearchMovie
           </Link>
           {user ? (
             <div className="block text-white ml-2">
               <span className="text-white">Welcome, {user.displayName}</span>
-              <button onClick={handleSignOut} className="ml-2 bg-red-500 text-white px-2 py-1 rounded">
+              <button
+                onClick={handleSignOut}
+                className="ml-2 bg-red-500 text-white px-2 py-1 rounded"
+              >
                 Logout
               </button>
             </div>
           ) : (
-            <Link to="/signin" className="text-white ml-2 bg-blue-500 px-2 py-1 rounded">
+            <Link
+              to="/signin"
+              className="text-white ml-2 bg-blue-500 px-2 py-1 rounded"
+            >
               Sign in
             </Link>
           )}
