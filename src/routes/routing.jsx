@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "@/pages/homePage/home";
 import MovieList from "@/pages/movieList/movieList";
 import Movie from "@/pages/movieDetail/movieDetail";
-import OpenAI from "@/pages/openAI/openAI";
+import OpenAI from "@/pages/openAI/openai";
 import Navbar from "@/components/navbar";
 import SearchMovie from "@/pages/search/searchMovie";
 import { AuthContextProvider } from "@/utils/contexts/authContext";
