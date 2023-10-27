@@ -35,11 +35,9 @@ const Navbar = () => {
           <Link to="/movies/upcoming" className="text-white ml-8">
             <i className="fas fa-calendar-alt"></i> Upcoming
           </Link>
-          {user && (
-            <Link to="/chatme" className="text-white ml-8">
-              <i className="fas fa-comments"></i> ChatMe
-            </Link>
-          )}
+          <Link to="/chatme" className="text-white ml-8">
+            <i className="fas fa-comments"></i> ChatMe
+          </Link>
           <Link to="/search" className="text-white ml-8">
             <i className="fas fa-search"></i> SearchMovie
           </Link>
@@ -82,11 +80,9 @@ const Navbar = () => {
           <Link to="/movies/upcoming" className="block text-white ml-2">
             <i className="fas fa-calendar-alt"></i> Upcoming
           </Link>
-          {user && ( // Check if the user is logged in
-            <Link to="/chatme" className="block text-white ml-2">
-              <i className="fas fa-comments"></i> ChatMe
-            </Link>
-          )}
+          <Link to="/chatme" className="block text-white ml-2">
+            <i className="fas fa-comments"></i> ChatMe
+          </Link>
           <Link to="/search" className="block text-white ml-2">
             <i className="fas fa-search"></i> SearchMovie
           </Link>
