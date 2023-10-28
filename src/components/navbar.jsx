@@ -12,9 +12,7 @@ const Navbar = () => {
       console.log(error);
     }
   };
-
   const [isNavOpen, setIsNavOpen] = useState(false);
-
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
