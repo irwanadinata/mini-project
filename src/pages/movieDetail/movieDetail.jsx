@@ -103,7 +103,7 @@ const Movie = () => {
           {currentMovieDetail && currentMovieDetail.imdb_id && (
             <Button
               label="Watch Now"
-              to={currentMovieDetail.homepage}
+              to={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
               target="_blank"
               className="movie-watchButton movie-Button"
             />
