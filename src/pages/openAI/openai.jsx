@@ -60,7 +60,7 @@ export default function Index() {
 
   return (
     <div className="w-full h-screen bg-dark text-white overflow-auto py-4 px-8">
-      <div className="grow flex flex-col overflow-auto">
+      <div className="grow flex flex-col h-[calc(90%-4rem)] space-y-4 overflow-auto">
         {results.map((result) => (
           <p
             className={clsx(
