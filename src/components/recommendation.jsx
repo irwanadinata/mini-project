@@ -3,6 +3,7 @@ import "@/styles/recommendation.css";
 import Cards from "@/components/card";
 import axios from "axios";
 import Button from "@/components/button";
+import Swal from "sweetalert2";
 
 const Recommendation = () => {
   const [movieList, setMovieList] = useState([]);
@@ -22,7 +23,11 @@ const Recommendation = () => {
         setMovieList([...movieList, ...response.data.results]);
       })
       .catch((error) => {
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message,
+        });
       });
   };
 

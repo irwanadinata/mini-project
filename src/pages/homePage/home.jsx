@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Recommendation from "@/components/recommendation";
+import Swal from "sweetalert2";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -19,7 +20,11 @@ const Home = () => {
         setPopularMovies(response.data.results);
       })
       .catch((error) => {
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message,
+        });
       });
   }, []);
 
