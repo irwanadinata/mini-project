@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { GoogleButton } from 'react-google-button';
 import { UserAuth } from '@/utils/contexts/authContext';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Signin = () => {
   const { googleSignIn, user } = UserAuth();
@@ -11,7 +12,11 @@ const Signin = () => {
     try {
       await googleSignIn();
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+      })
     }
   };
 

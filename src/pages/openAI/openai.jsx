@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import clsx from "clsx";
 import Input from "@/components/input";
 import Button from "@/components/button";
+import Swal from "sweetalert2";
 
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -26,7 +27,11 @@ export default function Index() {
       });
       setResults(response.choices);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+      })
     } finally {
       setIsLoading(false);
     }
@@ -52,7 +57,11 @@ export default function Index() {
       const choice = response.choices[0];
       setResults([...newData, choice]);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+      })
     } finally {
       setIsLoading(false);
     }

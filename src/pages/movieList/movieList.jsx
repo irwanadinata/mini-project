@@ -3,6 +3,7 @@ import "@/styles/movieList.css";
 import { useParams } from "react-router-dom";
 import Cards from "@/components/card";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const MovieList = () => {
   const [movieList, setMovieList] = useState([]);
@@ -22,7 +23,11 @@ const MovieList = () => {
         setMovieList(response.data.results);
       })
       .catch((error) => {
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message,
+        });
       });
   };
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import Cards from "@/components/card";
 import "@/styles/searchMovie.css";
 import Input from "@/components/input";
+import Swal from "sweetalert2";
 
 const SearchMovie = () => {
   const [query, setQuery] = useState("");
@@ -16,7 +17,11 @@ const SearchMovie = () => {
       );
       setResults(response.data.results);
     } catch (error) {
-      console.error("Error searching for movies:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+      })
     }
   };
 

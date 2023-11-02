@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { UserAuth } from "@/utils/contexts/authContext";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -9,7 +10,11 @@ const Navbar = () => {
     try {
       await logOut();
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message,
+      })
     }
   };
   const [isNavOpen, setIsNavOpen] = useState(false);
