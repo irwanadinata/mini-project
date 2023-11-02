@@ -3,6 +3,7 @@ import "@/styles/movieDetail.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Button from "@/components/button";
+import Swal from "sweetalert2";
 
 const Movie = () => {
   const [currentMovieDetail, setMovie] = useState();
@@ -23,7 +24,11 @@ const Movie = () => {
         setMovie(response.data);
       })
       .catch((error) => {
-        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message,
+        });
       });
   };
   return (
